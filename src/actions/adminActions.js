@@ -73,3 +73,10 @@ export const loginWithEmail = (email, password) => async (dispatch)=>{
         })
     }
 }
+
+export const adminLogout = () => async (dispatch)=>{
+    localStorage.removeItem('adminInfo');
+    dispatch({
+        type:ADMIN_LOGOUT
+    })
+}
