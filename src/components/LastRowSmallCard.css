@@ -1,0 +1,15 @@
+.deviceInfo{
+    margin: 1%;
+}
+
+.lastColumnIcon{
+    display: flex;
+    float: left;
+    margin: 2%;
+    width: 20%;
+}
+.lastColumnText{
+    display: flex;
+    float: left;
+    /* width: 80%; */
+}

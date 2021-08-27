@@ -1,15 +1,32 @@
 import { createStore, combineReducers, applyMiddleware } from 'redux'
 import thunk from 'redux-thunk';
 import { composeWithDevTools } from 'redux-devtools-extension';
-import {adminLoginReducer} from "./reducers/adminReducer"
+import {
+    adminLoginReducer,
+    adminRegisterReducer,
+} from "./reducers/adminReducer"
+
+import {
+    todayInsulinReducer,
+    weekAverageReducer,
+    threeMonthAverageReducer,
+    adminDashboardDevice,
+} from "./reducers/adminDashboardReducer"
 
 const rootReducer = combineReducers({
-    adminLoginReducer
+    adminLoginReducer,
+    adminRegisterReducer,
+    
+    todayInsulinReducer,
+    weekAverageReducer,
+    threeMonthAverageReducer,
+    adminDashboardDevice,
+
 })
 
 const initialState = {}
 
-const middleware = {thunk}
+const middleware = [thunk]
 
 const store  = createStore(
     rootReducer,

@@ -3,7 +3,6 @@ import './Login.css'
 import cookie from 'react-cookies'
 import {Form,Button} from 'react-bootstrap'
 import {useSelector, useDispatch} from 'react-redux'
-import { adminLoginEmail, adminLoginMobile } from '../redux/api/adminDashboardAPI'
 import { loginWithEmail, loginWithMobile } from '../actions/adminActions'
 import { useHistory } from 'react-router-dom'
 
@@ -68,7 +67,7 @@ function Login() {
     <Form.Check type="checkbox" onClick= {()=> setLoginForm({...loginForm, isMobile:!loginForm.isMobile})} label="Use mobile number" />
     </Form.Group>
     <Button variant="primary" type="submit" onClick={(e)=>handleSubmit(e)}>
-    Submit
+    {loading ? "Loading..." : "Submit"}
     </Button>
     </Form>
     </div>

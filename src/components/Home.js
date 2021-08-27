@@ -5,11 +5,11 @@ import Sidebar from './Sidebar'
 import {useSelector} from 'react-redux'
 
 function Home() {
-    const login = useSelector(state => state.login)
-    console.log(login)
+    const adminLoginReducer = useSelector(state => state.adminLoginReducer)
+    console.log(adminLoginReducer)
     return (
-        <div >
-            <p>{login.data}</p>
+        <div style={{display:"flex"}} >
+            <p>{adminLoginReducer.data}</p>
             <Sidebar className="adminDashboardSidebar" />
             <DashBoardCardContainer className="adminDashCardContainer" />
         </div>

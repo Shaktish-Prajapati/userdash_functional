@@ -1,8 +1,28 @@
-import React from 'react'
+import React,{useState, useEffect} from 'react'
 import './dashBoardCardContainer.css'
 import {Row,Col} from 'react-bootstrap'
+import TodayInsuinReading from './TodayInsuinReading'
+import { useDispatch, useSelector } from 'react-redux'
+import WeekAverageReading from './WeekAverageReading'
+import InsulinAverage from './InsulinAverage'
+import LastRowSmallCard from './LastRowSmallCard'
 
-function dashBoardCardContainer() {
+function DashBoardCardContainer() {
+    const [threemonthAverage, setThreemonthAverage] = useState({
+        averageInsulin:null,
+        averageGlucose:null,
+        basal:null,
+        bolus:null
+    })
+
+    const multipleDispatch = ()=>{
+        dispatch()
+    }
+    const dispatch = useDispatch()
+    useEffect(() => {
+        multipleDispatch()
+    }, [threemonthAverage])
+
     return (
         <div className='cardContainer'>
                 <div className="cardAlignment">
@@ -12,12 +32,14 @@ function dashBoardCardContainer() {
                     <div className="cardDesign" >
                         {/* <TodayInsulinReading /> */}
                         <p>Insulin reading today</p>
+                        <TodayInsuinReading />
                     </div>
                     </Col>
                     <Col >
                         <div className="cardDesign">
                         {/* <WeekAverageInsulin /> */}
                         <p>Week average insulin</p>
+                        <WeekAverageReading />
 
                         </div>
                     </Col>
@@ -26,29 +48,34 @@ function dashBoardCardContainer() {
                     <Col>
                         <div className="cardDesign">
                         <p>Week average insulin</p>
+                        <InsulinAverage />
                         </div>
                     </Col>
                     <Col >
                         <div className="cardDesign">
                         <p>Week average insulin</p>
+                        <InsulinAverage />
                         </div>
                     </Col>
                 </Row>
                 <Row>
                     <Col>
                         <div  className="cardDesign">
-                        <p>Week average insulin</p>
+                        <p>Reservoir</p>
+                        <LastRowSmallCard />
                         </div>
                     </Col>
                     <Col >
                         <div className="cardDesign">
 
                         <p>Week average insulin</p>
+                        <LastRowSmallCard />
                         </div>
                     </Col>
                     <Col >
                         <div className="cardDesign">
                         <p>Week average insulin</p>
+                        <LastRowSmallCard />
                         </div>
                     </Col>
                 </Row>
@@ -57,4 +84,4 @@ function dashBoardCardContainer() {
     )
 }
 
-export default dashBoardCardContainer
+export default DashBoardCardContainer
