@@ -36,6 +36,8 @@ export const loginWithMobile = (mobile, password) => async (dispatch)=>{
         })
 
         localStorage.setItem("adminInfo", JSON.stringify(data))
+        // console.log(data.data.user)
+        // cookie.save('token',data.data.user)
 
     } catch (error) {
         dispatch({
@@ -70,7 +72,8 @@ export const loginWithEmail = (email, password) => async (dispatch)=>{
         })
 
         localStorage.setItem("adminInfo", JSON.stringify(data))
-        cookie.save('token',data.user.token)
+        cookie.save('token',data.data.user.token)
+        // console.log(data.data.user.token);
 
     } catch (error) {
         dispatch({

@@ -1,22 +1,26 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import './LastRowSmallCard.css'
 import {Row, Col} from 'react-bootstrap'
 import ReservoirIcon from '../assests/water-tower.png'
+import { useDispatch } from 'react-redux'
 
-function LastRowSmallCard() {
+
+function LastRowSmallCard(props) {
+    
+
     return (
         <div className="deviceInfo">
         <Row>
-             <p>Card Title{/* {this.props.headName} */}</p>
+             <p>{props.heading}</p>
              <br/>
-             <small>Card explanation{/* {this.props.smallPara} */}</small>
+             <small>{props.subHeading}</small>
          </Row>
          <Row>
          <Col className="lastColumnIcon" >
-             <img width="50%" height="100%" src={ReservoirIcon/* this.props.iconImage */} alt="reservoir icon" />
+             <img width="50%" height="100%" src={props.image} alt="reservoir icon" />
          </Col>
          <Col className="lastColumnText" >
-             <p>card side text{/* {this.props.data} */}</p>
+             <p>{props.data}</p>
          </Col>
          </Row>
      </div>

@@ -17,6 +17,7 @@ const rootReducer = combineReducers({
     adminLoginReducer,
     adminRegisterReducer,
     
+    // user dashboard states
     todayInsulinReducer,
     weekAverageReducer,
     threeMonthAverageReducer,
@@ -24,13 +25,13 @@ const rootReducer = combineReducers({
 
 })
 
-const initialState = {}
+// const initialState = {}
 
 const middleware = [thunk]
 
 const store  = createStore(
     rootReducer,
-    initialState,
+    // initialState,
     composeWithDevTools(applyMiddleware(...middleware))
 )
 

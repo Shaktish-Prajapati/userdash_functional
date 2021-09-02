@@ -58,7 +58,7 @@ const data = [
     },
   ];
 
-function InsulinAverage() {
+function InsulinAverage(props) {
     return (
         <div className="insulinAverage">
       
@@ -66,8 +66,7 @@ function InsulinAverage() {
         <Col>
         <Row>
         <h3>
-          {/* {this.props.name} */}
-          Insulin
+          {props.name}
         </h3>
         </Row>
         <Row>
@@ -101,7 +100,7 @@ function InsulinAverage() {
         <BarChart
         /* width="40%"
         height="40%" */
-        data={data/* this.props.data */}
+        data={props.data}
         //   margin={{
         //     top: 5,
         //     right: 30,
@@ -110,12 +109,12 @@ function InsulinAverage() {
         //   }}
         >
         {/* <CartesianGrid strokeDasharray="3 3" /> */}
-        <XAxis dataKey="uv" />
+        <XAxis dataKey="month" />
         <YAxis />
         {/* <Tooltip /> */}
         {/* <Legend /> */}
         {/* <Bar dataKey="pv" fill="#8884d8" /> */}
-        <Bar dataKey={'amt'} fill="#333"/* {this.props.barColor} */ />
+        <Bar dataKey={'avgGlucose'} fill="#333"/* {this.props.barColor} */ />
         </BarChart>
         
         </ResponsiveContainer>
