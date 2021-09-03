@@ -55,7 +55,7 @@ function DashBoardCardContainer() {
                         avgTitle="Average" 
                         updatedAgo="Updated 2 hr ago" 
                         average='2.2'
-                        data={threeMonthAverageReducer.threeMonthAverageData.insulinAverage}
+                        data={threeMonthAverageReducer.threeMonthAverageData? threeMonthAverageReducer.threeMonthAverageData.insulinAverage : {} }
                         // basal={this.state.basal}
                         // bolus={this.state.bolus}
                         barColor='red'
@@ -69,7 +69,7 @@ function DashBoardCardContainer() {
                         avgTitle="Average" 
                         updatedAgo="Updated 2 hr ago" 
                         average='2.2'
-                        data={threeMonthAverageReducer.threeMonthAverageData.data.data.glucose}
+                        data={threeMonthAverageReducer.threeMonthAverageData ? threeMonthAverageReducer.threeMonthAverageData.data.data.glucose : {}}
                         // basal={this.state.basal}
                         // bolus={this.state.bolus}
                         barColor='red'
